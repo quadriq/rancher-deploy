@@ -9,7 +9,9 @@ It requires the `rancher-compose`, install in from here: https://github.com/ranc
 
 you need also to install "python click": `pip install click`
 
-check the script help
+then put the script `rancher-deploy.py` to `/bin/rancher-deploy.py` and do `chmod +x /bin/rancher-deploy.py`
+
+here, check the script help
 
 ```
 # rancher-deploy.py --help
@@ -53,13 +55,9 @@ build:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker build -t $CI_REGISTRY_IMAGE .
     - docker push $CI_REGISTRY_IMAGE
-  tags:
-    - public-shell
 
 deploy:
   stage: deploy
   script:
-    - rancher-deploy
-  tags:
-    - public-shell
+    - rancher-deploy.py
 ```
