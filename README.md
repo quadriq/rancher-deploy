@@ -16,20 +16,28 @@ here, check the script help
 ```
 # rancher-deploy.py --help
 
-Usage: rancher-deploy.py [OPTIONS]
+Usage: rancher-deploy [OPTIONS]
 
 Options:
-  --service_name TEXT      service name in Rancher, Could be a name of gitlab
-                           project  [required]
-  --url TEXT               The URL for your Rancher server, eg:
-                           http://rancher:8000  [required]
-  --rancher_key TEXT       The environment API key  [required]
-  --rancher_secret TEXT    The environment secret API key  [required]
-  --docker_image TEXT      Docker Image: e.g.
-                           dockerhub.example.com/docker/ubutnu  [required]
-  --docker_image_tag TEXT  Docker Image Tag, e.g. latest
-  --api_route TEXT         Rancher API route
-  --help                   Show this message and exit.
+  --service_name TEXT             service name in Rancher, Could be a name of
+                                  gitlab project  [required]
+  --url TEXT                      The URL for your Rancher server, eg:
+                                  http://rancher:8000  [required]
+  --rancher_key TEXT              The environment API key  [required]
+  --rancher_secret TEXT           The environment secret API key  [required]
+  --rancher_option_force_all TEXT
+                                  Force Rancher to recreate/upgrade machine
+  --rancher_option_ports TEXT     Exposed Ports,separated by space; example:
+                                  '8080:80 222:22'
+  --rancher_dynamic_ports TEXT    By using dynamic ports in Rancher, this
+                                  would produce additional rancher-compose
+                                  commit without ports
+  --docker_image TEXT             Docker Image: e.g.
+                                  dockerhub.example.com/docker/ubutnu
+                                  [required]
+  --docker_image_tag TEXT         Docker Image Tag, e.g. latest
+  --api_route TEXT                Rancher API route
+  --help                          Show this message and exit.
 
 ```
 
