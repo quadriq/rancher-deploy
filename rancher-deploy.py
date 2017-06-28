@@ -26,9 +26,9 @@ services:
 @click.option('--rancher_secret', envvar='RANCHER_SECRET_KEY', required=True,
               help="The environment secret API key")
 
-@click.option('--rancher_option_force_all', required=False, help="Force Rancher to recreate/upgrade machine", default=False)
+@click.option('--rancher_option_force_all', required=False, help="Force Rancher to recreate/upgrade machine", is_flag=True)
 @click.option('--rancher_option_ports', required=False, help="Exposed Ports,separated by space; example: '8080:80 222:22'", default=False)
-@click.option('--rancher_dynamic_ports', required=False, help="By using dynamic ports in Rancher, this would produce additional rancher-compose commit without ports", default=False)
+@click.option('--rancher_dynamic_ports', required=False, help="By using dynamic ports in Rancher, this would produce additional rancher-compose commit without ports",is_flag=True)
 
 @click.option('--docker_image', envvar='CI_REGISTRY_IMAGE', required=True,
               help="Docker Image: e.g. dockerhub.example.com/docker/ubutnu")
